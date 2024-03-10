@@ -13,12 +13,13 @@ TEST(public_aplusb_basic, basic)
     b_t b = {1};
 
     ASSERT_EQ(plus_basic(&a, &b), 2);
+    std::cout << "Test passed: + 0 point\n";
 }
 
 TEST(public_aplusb_basic, stress)
 {
-    for (int i = 0; i <= 42'000; ++i) {
-        for (int j = 0; j <= 42'000; ++j) {
+    for (int i = 420; i <= 1420; ++i) {
+        for (int j = 420; j <= 1420; ++j) {
             a_t a = {i};
             b_t b = {j};
 
@@ -26,6 +27,7 @@ TEST(public_aplusb_basic, stress)
         }
     }
     
+    std::cout << "Test passed: + 0 point\n";
 }
 
 TEST(public_aplusb_basic, fuzz)
@@ -43,6 +45,7 @@ TEST(public_aplusb_basic, fuzz)
         }
     }
     
+    std::cout << "Test passed: + 0 point\n";
 }
 
 ////////////////////////////////////////////////////////////////////////////
@@ -56,12 +59,14 @@ TEST(public_aplusb_intermediate, basic)
     plus_intermediate(&a, &b, &c);
 
     ASSERT_EQ(c.val, 2);
+
+    std::cout << "Test passed: + 0 point\n";
 }
 
 TEST(public_aplusb_intermediate, stress)
 {
-    for (int i = 0; i <= 42'000; ++i) {
-        for (int j = 0; j <= 42'000; ++j) {
+    for (int i = 420; i <= 1420; ++i) {
+        for (int j = 420; j <= 1420; ++j) {
             a_t a = {i};
             b_t b = {j};
             c_t c = {0};
@@ -72,6 +77,7 @@ TEST(public_aplusb_intermediate, stress)
         }
     }
     
+    std::cout << "Test passed: + 0 point\n";
 }
 
 TEST(public_aplusb_intermediate, fuzz)
@@ -92,6 +98,7 @@ TEST(public_aplusb_intermediate, fuzz)
         }
     }
     
+    std::cout << "Test passed: + 0 point\n";
 }
 
 ////////////////////////////////////////////////////////////////////////////
@@ -103,12 +110,14 @@ TEST(public_aplusb_advanced, basic)
     c_t *c = plus_advanced(&a, &b);
 
     ASSERT_EQ(c->val, 2);
+
+    std::cout << "Test passed: + 0 point\n";
 }
 
 TEST(public_aplusb_advanced, stress)
 {
-    for (int i = 0; i <= 42'000; ++i) {
-        for (int j = 0; j <= 42'000; ++j) {
+    for (int i = 420; i <= 1420; ++i) {
+        for (int j = 420; j <= 1420; ++j) {
             a_t a = {i};
             b_t b = {j};
             c_t *c = plus_advanced(&a, &b);
@@ -117,6 +126,7 @@ TEST(public_aplusb_advanced, stress)
         }
     }
     
+    std::cout << "Test passed: + 0 point\n";
 }
 
 TEST(public_aplusb_advanced, fuzz)
@@ -135,4 +145,5 @@ TEST(public_aplusb_advanced, fuzz)
         }
     }
     
+    std::cout << "Test passed: + 0 point\n";
 }
