@@ -115,9 +115,18 @@ TEST(basic, pop_back)
         correct1 = "dodo";
     #endif
 
+    TYPE correct0;
+    
+    #if INTEGER
+        correct0 = 0;      
+    #elif STR
+        correct0 = "";
+    #endif
+
     arr->array->head[3] = correct3;
     arr->array->head[2] = correct2;
     arr->array->head[1] = correct1;
+    arr->array->head[0] = correct0;
 
     output_t out;
 
@@ -140,9 +149,7 @@ TEST(basic, pop_back)
     ASSERT_EQ(4, arr->capacity);
 
     out = pop_back_da (arr);
-    #if INTEGER
-        ASSERT_EQ(0, *(out.value));
-    #endif
+    ASSERT_EQ(correct0, *(out.value));
     ASSERT_EQ(0, out.code);
     ASSERT_EQ(0, arr->size);
     ASSERT_EQ(2, arr->capacity);
