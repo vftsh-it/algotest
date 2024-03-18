@@ -140,7 +140,9 @@ TEST(basic, pop_back)
     ASSERT_EQ(4, arr->capacity);
 
     out = pop_back_da (arr);
-    ASSERT_EQ(0, *(out.value));
+    #if INTEGER
+        ASSERT_EQ(0, *(out.value));
+    #endif
     ASSERT_EQ(0, out.code);
     ASSERT_EQ(0, arr->size);
     ASSERT_EQ(2, arr->capacity);
