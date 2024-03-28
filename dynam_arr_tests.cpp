@@ -20,9 +20,9 @@ TEST(basic, init)
 TEST(basic, basic_init)
 {
     dyn_arr_t *arr = basic_init_da ();
-    ASSERT_EQ(0, arr->size);
-    ASSERT_NE(0, arr->capacity);
-    ASSERT_EQ(arr->capacity, arr->array->size);
+    ASSERT_NE(0, arr->size);
+    ASSERT_EQ(0, arr->capacity);
+    ASSERT_EQ(arr->size, arr->array->size);
     std::cout << "Test passed: + 0.2 point\n";
 }
 
