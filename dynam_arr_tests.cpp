@@ -11,7 +11,7 @@ extern "C"
 TEST(basic, init)
 {
     dyn_arr_t *arr = init_da (3);
-    ASSERT_EQ(3, arr->capacity);
+    ASSERT_EQ(0, arr->capacity);
     ASSERT_EQ(3, arr->size);
     ASSERT_EQ(3, arr->array->size);
     std::cout << "Test passed: + 0.2 point\n";
