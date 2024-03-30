@@ -21,3 +21,19 @@ add_test(
         NAME dynam_arr
         COMMAND $<TARGET_FILE:dynam_arr_tests>
 )
+
+add_executable(doub_list_tests doub_list_tests.cpp)
+target_link_libraries(doub_list_tests PRIVATE list doub_list src gtest gtest_main)
+
+add_test(
+        NAME doub_list
+        COMMAND $<TARGET_FILE:doub_list_tests>
+)
+
+add_executable(sing_list_tests sing_list_tests.cpp)
+target_link_libraries(sing_list_tests PRIVATE list sing_list src gtest gtest_main)
+
+add_test(
+        NAME sing_list
+        COMMAND $<TARGET_FILE:sing_list_tests>
+)
