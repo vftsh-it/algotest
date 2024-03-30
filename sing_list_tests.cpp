@@ -11,7 +11,7 @@ extern "C"
 
 TEST(basic, init)
 {
-    list_t *list = init_sll();
+    singly_linked_list_t *list = init_sll();
     ASSERT_EQ(list->head, (node_t *)NULL);
     ASSERT_EQ(list->tail, (node_t *)NULL);
     ASSERT_EQ(list->size, 0);
@@ -23,7 +23,7 @@ TEST(basic, init)
 
 TEST(insert, single)
 {
-    list_t *list = init_sll();
+    singly_linked_list_t *list = init_sll();
 
     TYPE val;
 
@@ -63,7 +63,7 @@ TEST(insert, double)
         snd = "tulip";
     #endif
 
-    list_t *list = init_sll();
+    singly_linked_list_t *list = init_sll();
     int res = insert_sll (list, 0, &fst);
 
     ASSERT_EQ(0, res);
@@ -108,7 +108,7 @@ TEST(insert, triple)
         trd = "dundelion";
     #endif
 
-    list_t *list = init_sll();
+    singly_linked_list_t *list = init_sll();
     int res = insert_sll (list, 0, &fst);
     ASSERT_EQ(0, res);
     res = insert_sll (list, 1, &snd);
@@ -155,7 +155,7 @@ TEST(basic, get)
         trd = "dundelion";
     #endif
 
-    list_t *list = init_sll();
+    singly_linked_list_t *list = init_sll();
     int res = insert_sll (list, 0, &fst);
     ASSERT_EQ(0, res);
     res = insert_sll (list, 1, &snd);
@@ -210,7 +210,7 @@ TEST(basic, set)
         sxh = "rose";
     #endif
 
-    list_t *list = init_sll();
+    singly_linked_list_t *list = init_sll();
     int res = insert_sll (list, 0, &fst);
     ASSERT_EQ(0, res);
     res = insert_sll (list, 1, &snd);
@@ -242,7 +242,7 @@ TEST(basic, set)
 
 TEST(basic, size)
 {
-    list_t *list = init_sll();
+    singly_linked_list_t *list = init_sll();
     list->size = 121;
 
     ASSERT_EQ(121, size_sll (list));
@@ -262,7 +262,7 @@ TEST(delete, single)
         val = "magnolia";
     #endif
 
-    list_t *list = init_sll();
+    singly_linked_list_t *list = init_sll();
     insert_sll (list, 0, &val);
 
     delete_sll (list, 0);
@@ -287,7 +287,7 @@ TEST(delete, double)
         snd = "tulip";
     #endif
 
-    list_t *list = init_sll();
+    singly_linked_list_t *list = init_sll();
     insert_sll (list, 0, &fst);
     insert_sll (list, 0, &snd);
 
@@ -325,7 +325,7 @@ TEST(delete, triple)
         trd = "dundelion";
     #endif
 
-    list_t *list = init_sll();
+    singly_linked_list_t *list = init_sll();
     insert_sll (list, 0, &fst);
     insert_sll (list, 1, &snd);
     insert_sll (list, 2, &trd);
@@ -354,7 +354,7 @@ TEST(delete, triple)
 #if INTEGER
 TEST(stress, insert)
 {
-    list_t *list = init_sll();
+    singly_linked_list_t *list = init_sll();
     node_t *prev;
     int val = 1;
 
@@ -374,7 +374,7 @@ TEST(stress, insert)
 
 TEST(fuzz, fuzz)
 {
-    list_t *list = init_sll();
+    singly_linked_list_t *list = init_sll();
     node_t *prev;
     int val;
     output_t out;
